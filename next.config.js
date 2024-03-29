@@ -7,7 +7,7 @@ const nextConfig = {
     localeDetection: false
   },
   images: {
-    domains: ['nehre.codio.az', 'via.placeholder.com'],
+    domains: ['nehre.codio.az','nehre.vercel.app', 'via.placeholder.com'],
   },
 };
 

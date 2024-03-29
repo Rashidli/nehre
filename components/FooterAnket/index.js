@@ -76,7 +76,7 @@ const FooterAnket = () => {
       //   },
       // });
 
-  const response = await fetch('https://nehre.codio.az/api/v1/vendors', {
+  const response = await fetch('https://cosmoline.166tech.az/v1/vendors', {
         Method: 'POST',
         headers: {
           Accept: 'application.json',

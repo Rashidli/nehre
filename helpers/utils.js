@@ -5,7 +5,7 @@ import store from "../stores";
 
 
 export const httpRequest = axios.create({
-    baseURL: 'https://nehre.codio.az/api/v1',
+    baseURL: 'https://cosmoline.166tech.az/api/v1',
     timeout: 7500,
     headers: {
         Accept: 'application/json',
