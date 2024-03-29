@@ -1,0 +1,76 @@
+@import '../../values/colors.module.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: 20px;
+    padding: 16px;
+     width: 100%;
+    height: 100%;
+    transition: $transition;
+
+
+    .profileContainer {
+        display: flex;
+        align-items: center;
+
+
+        .imageWrapper {
+            overflow: hidden;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .costumerInfo { 
+            margin-left: 8px;
+            font-size: 14px;
+
+            .userName { 
+                display: block;
+                font-weight: 600;
+              
+                font-size: 16px;
+                margin: 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 120px;
+                overflow: hidden;
+            }
+            .starsContainer {
+                    margin-top: 4px;
+            
+                    .starFilled {
+                        font-size: 18px;
+                        color: $starFilled;
+                        // filter: drop-shadow(1px 1px 1px rgba(19, 19, 19, 0.2));
+                    }
+            
+                    .starOutline {
+                        font-size: 18px;
+                        color: $starFilled;
+                        // filter: drop-shadow(1px 1px 1px rgba(19, 19, 19, 0.2));
+                    }
+                }
+        }
+    }
+
+    .text { 
+        margin-top: 16px;
+        font-size: 14px;
+        color: $black;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        .profileContainer {
+            .imageWrapper {
+                width: 75px;
+                height: 75px;
+            }
+        }
+    }
+}

@@ -1,0 +1,115 @@
+@import '../../values/colors.module.scss';
+
+.container {
+  padding-top: 2rem;
+  display: flex;
+  gap: 2rem;
+
+  .categoriesSidebarContainer {
+    width: 300px !important;
+    flex-shrink: 0;
+  }
+
+  .heading {
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+
+  .categoryContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .categoryCardContainer {
+    display: flex;
+    margin-top: 12px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+.accordionCustom {
+  &:hover {
+    .accordionButton {
+      background: $greenHoverOpacity30;
+    }
+
+    .accordionSummaryHeaderCustom {
+      background: $greenHoverOpacity30;
+    }
+  }
+}
+
+.accordionDetailsCustom {
+  margin-left: 20px !important;
+
+  .accordionDetailsHeaderCustom {
+    width: 100%;
+    padding: 8px;
+    margin-right: 8px !important;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover {
+      background: $greenHoverOpacity30 !important;
+    }
+  }
+}
+
+.accordionButton {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #fff;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    background: $greenHoverOpacity50 !important;
+  }
+}
+
+.accordionSummaryCustom {
+
+  height: 40px !important;
+}
+
+.accordionSummaryHeaderCustom {
+  width: 100%;
+  padding: 8px;
+  margin-right: 8px !important;
+  border-radius: 8px;
+
+  &:hover {
+    background: $greenHoverOpacity50 !important;
+
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .categoriesSidebarContainer {
+    display: none;
+  }
+
+  .heading {
+    margin-top: 8rem !important;
+    margin-left: 24px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .categoryCardContainer {
+    justify-content: center !important;
+    flex: 1;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .heading {
+    margin-top: 0 !important;
+  }
+}

@@ -1,0 +1,70 @@
+@import '../../values/colors.module.scss';
+
+.dropContainer {
+  font-family: "Asap", sans-serif;
+  font-weight: 500;
+  position: relative;
+  z-index: 104;
+  .button {
+      background-color: $white;
+      font-size: 14px;
+      color: #808080;
+      font-weight: 400;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &::after {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 0;
+          margin-left: 15px;
+          vertical-align: middle;
+          border-top: 5px solid;
+          border-right: 5px solid transparent;
+          border-left: 5px solid transparent;
+      }
+
+      &:hover {
+          color: $main;
+      }
+  }
+  .drop {
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      overflow: hidden;
+      position: absolute;
+      padding-top: 15px;
+      max-height: 300px;
+      overflow-y: auto;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      .dropMenuLink {
+          padding: 10px 20px;
+          white-space: nowrap;
+          background-color: $white;
+          color: $textBlack;
+          font-size: 14px;
+          font-weight: 400;
+          &:hover {
+              color: $main;
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dropContainer {
+      .drop {
+        padding-top: 10px;
+        max-height: 250px;
+        right: 0;
+        .dropMenuLink {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+      }
+  }
+}

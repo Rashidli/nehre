@@ -1,0 +1,302 @@
+@import '../../../../../values/colors.module.scss';
+
+.error {
+  border-color: $red !important;
+  color: red !important;
+}
+
+.privacyModal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  div {
+    position: relative;
+    padding: 20px;
+    overflow: auto;
+    background: $white;
+    height: 100%;
+
+
+    h2 {
+      margin-bottom: 12px;
+    }
+    .privacyModalText {
+      text-align: justify;
+      font-family: Asap, 'sans-serif';
+      line-height: 22px;
+    }
+
+    .closeButton {
+      border: none;
+      width: 48px;
+      height: 48px;
+      background: none;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      font-size: 32px;
+      color: $textGray;
+      opacity: 0.5;
+      transition: $transition;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.passwordContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.showPass {
+  border: none;
+  background: transparent;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  right: 8px;
+}
+
+.otpContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.otpInput {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid $main;
+  font-size: 36px;
+  background: transparent;
+  font-weight: 200;
+  color: $main;
+
+  &::selection {
+    color: $main;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $starFilled;
+  }
+
+  &::placeholder {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .loginHeader {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    color: $textGray;
+    line-height: 18px;
+    margin-bottom: 24px;
+  }
+
+  .codeTimeOut {
+    font-size: 14px;
+    font-weight: 400;
+    color: $textGray;
+    line-height: 18px;
+  }
+
+  .codeTime {
+    font-size: 14px;
+    font-weight: 400;
+    color: $textGray;
+    line-height: 18px;
+  }
+
+  .inpContainer {
+    position: relative;
+    .dynamicPlaceholder {
+      color: #757575;
+      position: absolute;
+      font-size: 16px;
+      top: 20px;
+      left: 16px;
+      pointer-events: none;
+      transition: all 300ms ease;
+    }
+
+    input:focus ~ .dynamicPlaceholder {
+      font-size: 10px;
+      top: 5px;
+      left: 16px;
+    }
+
+    input:not(:placeholder-shown) ~ .dynamicPlaceholder {
+      font-size: 10px;
+      top: 5px;
+      left: 16px;
+    }
+  }
+
+  .loginInputs {
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 16px;
+    height: 56px;
+    background: #efefef !important;
+    transition: all 300ms ease;
+    border: none;
+    outline: none;
+
+    &:focus {
+      background: #fff !important;
+      outline: solid 1px $focusedBorder;
+    }
+  }
+
+  .passwordInp::-ms-reveal {
+    display: none;
+  }
+
+  .phoneLabel {
+    position: absolute;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 400;
+
+    color: $textGray;
+  }
+
+  .phoneInput {
+    border: 1px solid $borderWhite;
+    border-radius: 12px;
+    padding: 10px 16px;
+    padding-top: 20px;
+    font-size: 16px;
+    border: 1px solid $main;
+  }
+
+  .registerButton {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    height: 50px;
+    background: $green;
+    color: $textWhite;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background: $greenHover;
+    }
+  }
+
+  .userAgreement {
+    font-size: 12px;
+    padding-left: 4px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+
+    .privacyLink {
+      transition: 0.4s;
+      border: none;
+      background: transparent;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        color: $hover;
+      }
+    }
+  }
+
+  .userAgreementInput {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .privacyModal {
+    height: 80vh;
+    width: 700px;
+    div {
+      position: relative;
+      background: $white;
+    border-radius: 24px;
+      overflow: auto;
+
+  
+  
+      h2 {
+        margin-bottom: 12px;
+      }
+      .privacyModalText {
+        text-align: justify;
+        font-family: Asap, 'sans-serif';
+      }
+  
+      .closeButton {
+        border: none;
+        width: 48px;
+        height: 48px;
+        background: none;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        font-size: 32px;
+        color: $textGray;
+        opacity: 0.5;
+        transition: $transition;
+        cursor: pointer;
+  
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+
+
+  .registerContainer {
+    .loginHeader {
+      font-size: 24px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      color: $textGray;
+      line-height: 18px;
+      margin-bottom: 24px;
+    }
+  }
+}

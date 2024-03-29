@@ -1,0 +1,68 @@
+@import '../values/colors.module.scss';
+
+.container { 
+    margin:  0 8px;
+    .middleContainer { 
+        .title { 
+            font-size: 24px;
+            font-family: 'Asap', sans-serif;
+            text-align: center;
+            font-weight: lighter;
+            margin: 25px 0;
+        }
+        .cardContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 24px;
+        }
+    }
+
+    .flexContainer {
+        display: flex;
+        margin-top: 12px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 12px;
+    }
+    .cashBackContainer{
+        background-color: $green;
+        border-radius: 20px;
+        padding: 24px;
+        margin: 20px 0;
+
+        .cashBackTitle {
+            font-size: 14px;
+            color: hsla(0, 0%, 100%, .8);
+            font-family: 'Asap', sans-serif;
+            margin-top: 30px;
+        }
+
+        .cashBackText { 
+            font-size: 22px;
+            color: $white;
+            text-align: center;
+            margin: 20px 0 ;
+        }
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .container { 
+        margin: 0;
+        .middleContainer { 
+            padding: 0;
+            .cardContainer { 
+                flex-direction: row;
+            }
+        }
+        .flexContainer {
+            padding: 16px 36px;
+        }
+        .cashBackContainer {
+            .cashBackText {
+                font-size: 30px;
+            }
+        }
+    } 
+}

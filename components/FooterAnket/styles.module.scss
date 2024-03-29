@@ -1,0 +1,340 @@
+@import '../../values/colors.module.scss';
+
+.container {
+  overflow: auto;
+  height: 100vh;
+
+  .anket {
+    color: #000;
+    // width: 80%;
+    border-radius: 10px !important;
+    background: $white;
+    margin: 0 auto;
+    position: relative;
+
+    &_flex {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    &__radioInputContainer {
+      display: grid;
+      gap: 8px;
+    }
+
+    &_flexRow {
+      justify-content: flex-start;
+      flex-direction: row
+    }
+
+    &_margin {
+      margin-bottom: 20px;
+    }
+
+    &_width {
+      width: 50%;
+    }
+
+    &__modalHeader {
+      align-items: flex-start;
+      padding: 0;
+      background: rgb(238, 238, 238);
+
+      button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 100;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+
+    &__modalTitle {
+      position: relative;
+    }
+
+    &__headerContainer {
+      text-align: center;
+      padding: 3% 10%;
+      border-radius: 10px 10px 0 0 !important;
+    }
+
+    &__closeButton {
+      cursor: pointer;
+      border: none;
+    }
+
+    &__header {
+      line-height: 44px;
+      font-size: 52px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    &__description {
+      font-size: 20px;
+    }
+
+    &__error {
+      font-size: 10px;
+      color: red;
+      margin-top: 8px;
+    }
+
+    &__body {
+      padding: 20px 40px;
+    }
+
+    &__sectionTitle {
+      text-align: left;
+      color: #000 !important;
+      font-weight: 500 !important;
+      font-size: 18px !important;
+      line-height: 25px !important;
+      margin-bottom: 10px;
+    }
+
+    &__userInfo {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    &__label {
+      width: 100%;
+      position: relative;
+
+      &_width {
+        width: 48%
+      }
+
+      &_position {
+        position: relative;
+      }
+    }
+
+
+    &__beginningNumber {
+      color: #757575;
+      font-size: 14px;
+      line-height: 40px;
+      left: 10px;
+
+      &_position {
+        position: absolute;
+        top: -10px;
+      }
+    }
+
+    &__input {
+      border: none;
+      outline: none;
+      height: 30px;
+      padding: 24px 20px;
+      border-radius: 5px;
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 30px;
+      flex: 1;
+      background: #efefef !important;
+      transition: all 300ms ease;
+      
+      &:hover {
+        background: #e2e2e2 !important;
+      }
+
+      &:focus {
+        background: #fff !important;
+        outline: solid 1px $focusedBorder;
+      }
+
+      &_width {
+        width: 100%
+      }
+
+      &_color {
+        background: rgb(238, 238, 238);
+
+        &::placeholder {
+          color: $textGray;
+        }
+      }
+
+      &_phone {
+        padding-left: 46px;
+      }
+    }
+
+    .dynamicPlaceholder {
+      color: #757575;
+      position: absolute;
+      font-size: 16px;
+      top: 16px;
+      left: 20px;
+      pointer-events: none;
+      transition: all 300ms ease;
+
+    }
+
+    &__input:focus~.dynamicPlaceholder {
+      font-size: 10px;
+      top: 5px;
+      left: 20px;
+    }
+
+    &__input:not(:placeholder-shown)~.dynamicPlaceholder {
+      font-size: 10px;
+      top: 5px;
+      left: 20px;
+    }
+
+    &__input[type='number'] {
+      padding-left: 50px;
+    }
+
+    &__fileInput {
+      width: 100%;
+      height: 150px;
+      border-radius: 10px;
+      color: transparent;
+      border: 1px dashed #757575;
+      cursor: pointer;
+
+      &::before {
+        content: ' ';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #757575;
+        max-width: 100%;
+        flex: 1;
+        height: 100%;
+      }
+    }
+
+    &__fileInputContainer {
+      display: flex;
+      background: rgb(238, 238, 238);
+      padding: 10px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    &__address {
+      &_gap {
+        gap: 0px
+      }
+    }
+
+    &__addressContent {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__textArea {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__uploadedImg {
+      position: absolute;
+      bottom: 50px;
+      left: 46%;
+      color: #757575;
+    }
+
+    &__btn {
+      width: 100%;
+      color: #fff;
+      border: none;
+      background: #8cbc47;
+      padding: 14px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 998px) {
+      &__userInfo {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      &__label {
+        &_width {
+          width: 100%;
+        }
+      }
+
+      &_flex {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      &__body {
+        padding: 20px 20px;
+      }
+
+      &_width {
+        width: 100%;
+      }
+
+      &_flexRow {
+        flex-direction: row;
+      }
+
+      &__radioBtnContainer {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      &__radioBtn {
+        line-height: 20px;
+      }
+
+      &_margin {
+        margin-bottom: 10px;
+      }
+
+      &__header {
+        font-size: 35px;
+        margin-bottom: 10px;
+      }
+
+      &__description {
+        font-size: 15px;
+      }
+    }
+
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    input[type=radio] {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+
+}

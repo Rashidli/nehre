@@ -1,0 +1,567 @@
+@import '../../values/colors.module.scss';
+
+.container {
+  position: relative;
+  display: flex;
+  border-bottom: 2px solid $lightBorderGray;
+  padding: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .comboIndicator {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+
+  .detailContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+
+    .imageContainer {
+      position: relative;
+      height: 72px;
+      width: 82px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      h3 {
+        font-size: 14px;
+        font-weight: 600;
+        color: $black;
+        margin-bottom: 4px;
+      }
+
+      span {
+        font-size: 12px;
+        font-weight: 400;
+        color: $textGray;
+        margin-bottom: 4px;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $containerBg;
+          height: 20px;
+          width: 20px;
+          color: $black;
+          font-size: 12px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .actionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin: 12px 0;
+
+    .deleteWholeProduct {
+      display: inline-block;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: $textGray;
+      justify-self: flex-end;
+      transition: $transition;
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    .counter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      width: 100px;
+
+      .button {
+        background: $green;
+        color: white;
+        border-radius: 50%;
+        border: none;
+        width: 32px;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        transition: $transition;
+        cursor: pointer;
+
+
+        .decreaseIcon {
+          width: 100%;
+          height: 100%;
+          font-size: 18px;
+        }
+
+        .increaseIcon {
+          width: 100%;
+          height: 100%;
+          font-size: 18px;
+        }
+
+        &:hover {
+          background: $main;
+        }
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .deactivated {
+        background: $border;
+
+        &:hover {
+          background: $border;
+        }
+      }
+    }
+
+    .priceContainer {
+      font-size: 16px;
+      color: black;
+      font-weight: 500;
+      text-align: center;
+      width: 100px;
+
+      span {
+        text-align: right;
+        margin-right: 4px;
+      }
+    }
+  }
+
+
+}
+
+
+.comboContainer {
+  border: 1px solid $textGray;
+  border-radius: 12px;
+  padding: 12px;
+  flex-direction: row;
+  flex: 1;
+  flex-grow: 0;
+
+  .innerContainer {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .comboIndicator {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+
+    .detailContainer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+
+      .imageContainer {
+
+        position: relative;
+        height: 72px;
+        width: 82px;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        h3 {
+          font-size: 14px;
+          font-weight: 600;
+          color: $black;
+          margin-bottom: 4px;
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: 400;
+          color: $textGray;
+          margin-bottom: 4px;
+        }
+
+        div {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $containerBg;
+            height: 20px;
+            width: 20px;
+            color: $black;
+            font-size: 12px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    .actionContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+      margin: 12px 0;
+
+      .deleteWholeProduct {
+        display: inline-block;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: $textGray;
+        justify-self: flex-end;
+
+        &:hover {
+          color: $red;
+        }
+      }
+
+      .counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+        width: 100px;
+
+        .button {
+          cursor: pointer;
+          background: $green;
+          color: white;
+          border-radius: 50%;
+          border: none;
+          width: 32px;
+          height: 32px;
+          justify-content: center;
+          align-items: center;
+          transition: $transition;
+
+          .decreaseIcon {
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+          }
+
+          .increaseIcon {
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+          }
+
+          &:hover {
+            background: $main;
+          }
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .deactivated {
+          background: $border;
+
+          &:hover {
+            background: $border;
+          }
+        }
+      }
+
+      .priceContainer {
+        font-size: 16px;
+        color: black;
+        font-weight: 500;
+        width: 100px;
+        text-align: center;
+
+
+        span {
+          margin-right: 4px;
+        }
+      }
+    }
+
+
+  }
+
+  .modalButton {
+    display: block;
+    background: $greenHover;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+    transition: $transition;
+    border: none;
+
+    &:hover {
+      background: $hover;
+    }
+
+
+  }
+
+
+
+}
+
+
+.comboModal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: $white;
+  padding: 16px;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.loaderContainer {
+  align-self: center;
+  justify-self: center;
+}
+
+.comboItemContainer {
+  position: relative;
+  display: flex;
+  min-height: 140px;
+  border: 1px solid $textGray;
+  border-radius: 12px;
+  padding: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .comboIndicator {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .imageContainer {
+    position: relative;
+    height: 72px;
+    width: 82px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .detailContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+
+
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      h3 {
+        font-size: 14px;
+        font-weight: 600;
+        color: $black;
+        margin-bottom: 4px;
+      }
+
+      span {
+        font-size: 12px;
+        font-weight: 400;
+        color: $textGray;
+        margin-bottom: 4px;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $containerBg;
+          height: 20px;
+          width: 20px;
+          color: $black;
+          font-size: 12px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .actionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+
+    .deleteWholeProduct {
+      display: inline-block;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: $textGray;
+      justify-self: flex-end;
+      transition: $transition;
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    .counter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      width: 100px;
+
+      .button {
+        background: $green;
+        color: white;
+        border-radius: 50%;
+        border: none;
+        width: 32px;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        transition: $transition;
+        cursor: pointer;
+
+
+        .decreaseIcon {
+          width: 100%;
+          height: 100%;
+          font-size: 18px;
+        }
+
+        .increaseIcon {
+          width: 100%;
+          height: 100%;
+          font-size: 18px;
+        }
+
+        &:hover {
+          background: $main;
+        }
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .deactivated {
+        background: $border;
+
+        &:hover {
+          background: $border;
+        }
+      }
+    }
+
+    .priceContainer {
+      font-size: 16px;
+      color: black;
+      font-weight: 500;
+      width: 100px;
+
+      span {
+        margin-right: 4px;
+      }
+    }
+  }
+
+
+}
+
+.modalCloseButton {
+  background: $green;
+  min-height: 50px;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  max-height: 32px;
+  transition: $transition;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background: $main;
+  }
+}
+
+@media screen and (min-width:1000px) {
+  .comboModal {
+    height: 90%;
+    display: flex;
+    width: 90%;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}

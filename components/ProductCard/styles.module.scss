@@ -1,0 +1,554 @@
+@import "../../values/colors.module.scss";
+
+
+.topOfBottomContainer {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.container {
+  background: $white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  width: calc((100% / 2) - (12px / 2));
+  // border: .5px solid $textGray;
+  transition: $transition;
+  flex-shrink: 0;
+  height: 400px;
+
+  &.favoriteProductContainer {
+    width: calc((100% / 2) - (12px / 2));
+    border: 1px solid #ebebeb;;
+  }
+
+  .counter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $black50;
+
+    & ~ .modalButton .overLay {
+      transition: none!important;
+      visibility: hidden;
+    }
+
+    span {
+      color: $white;
+      font-size: 2.1rem;
+      font-weight: 500;
+      margin: 0 12px;
+    }
+
+    button {
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: $white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $white20;
+      }
+    }
+  }
+
+  .stickerContainer {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    z-index: 100;
+    backface-visibility: visible;
+    // pointer-events: none;
+
+    .discountSticker {
+      background-color: $red;
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding: 1px 8px;
+      color: $white;
+      border-radius: 4px;
+      width: fit-content;
+    }
+
+    .label {
+      position: relative;
+      z-index: 100;
+      font-size: 10px;
+      padding: 1px 8px;
+      color: $white;
+      border-radius: 4px;
+      width: fit-content;
+      padding: 4px;
+      cursor: pointer;
+    }
+  }
+  .cardTop {
+    position: relative;
+    flex: 2;
+    width: 100%;
+    max-height: 55%;
+    cursor: pointer;
+
+    .modalButton {
+      width: 100%;
+      height: 100%;
+      border: transparent;
+      background-color: transparent;
+      text-decoration: none;
+
+      &:hover {
+        color: $textBlack;
+      }
+    }
+
+    .favoriteButton {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      border: transparent;
+      color: $textGray;
+      border: 1px solid $textGray;
+      cursor: pointer;
+      z-index: 20;
+      
+      &.inFavoriteButton {
+        border: 1px solid $red;
+        svg {
+          fill: $red;
+        }
+      }
+
+      svg {
+        width: 100%;
+        transform: rotate(25deg);
+      }
+
+      &:hover {
+        color: $red;
+        border-color: $red;
+        svg {
+          fill: $red;
+        }
+      }
+    }
+
+    span>img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+
+    .overLay {
+      opacity: 0;
+      transition: $transition;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+
+      &:hover {
+        opacity: 1;
+
+        visibility: visible;
+        background-color: $black30;
+      }
+
+      .zoomIcon {
+        font-size: 38px;
+        color: $white;
+      }
+    }
+
+
+    .delivery {
+      display: flex;
+      gap: 6px;
+      background: $white;
+      border: 1px solid $border;
+      padding: 4px 6px;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      z-index: 3;
+
+      .days {
+        font-size: 8px;
+        font-weight: 200;
+        color: $black;
+      }
+    }
+  }
+
+  .cardBottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px 8px;
+    justify-content: space-between;
+    max-height: 45%;
+
+    .productName {
+      font-size: 13px;
+      font-family: 'Asap', sans-serif;
+      font-weight: 500;
+    }
+
+    .variationSelect {
+      border: none !important;
+      outline: none !important;
+      margin: 4px 0;
+      display: inline;
+      width: 75px;
+      font-size: 12px;
+      color: $textGray;
+      background-color: $containerBg;
+      padding: 0 5px;
+      &:focus {
+        border: none !important;
+        outline: none !important;
+      }
+    }
+
+    .MuiDataGrid-root .MuiDataGrid-columnHeader:focus,
+    .MuiDataGrid-root .MuiDataGrid-cell:focus {
+      outline: none;
+    }
+
+    .productSub {
+      color: $textGray;
+      margin-top: 6px;
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 16px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+      .vendorName {
+        margin-left: 5px;
+        color: $textGray;
+      }
+    }
+
+    .priceAndAddToCard {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      .priceContainer {
+        width: 65%;
+        position: relative;
+
+        .oldPriceContainer {
+
+          .oldPriceImage {
+            filter: invert(57%) sepia(0%) saturate(58%) hue-rotate(283deg) brightness(89%) contrast(93%);
+          }
+
+          .oldPrice {
+            margin-right: 4px;
+            text-decoration: line-through;
+            color: $textGray;
+            font-size: 12px;
+          }
+        }
+
+
+
+        .price {
+          color: black;
+          font-size: 14px;
+          margin-right: 4px;
+        }
+
+        &:has(.oldPriceContainer) {
+          .price {
+            color: $red;
+          }
+        }
+        .currentPriceImage {
+          filter: invert(29%) sepia(73%) saturate(3690%) hue-rotate(340deg) brightness(103%) contrast(84%);
+        }
+
+        .slash {
+          color: $textGray;
+          font-size: 12px;
+        }
+
+        .attribute {
+          font-size: 12px;
+          color: $textGray;
+        }
+
+        .starsContainer {
+          margin-top: 4px;
+          margin-left: -1px;
+
+          .starFilled {
+            font-size: 16px;
+            color: $starFilled;
+            // filter: drop-shadow(1px 1px 1px rgba(19, 19, 19, 0.2));
+          }
+
+          .starOutline {
+            font-size: 16px;
+            color: $starFilled;
+            // filter: drop-shadow(1px 1px 1px rgba(19, 19, 19, 0.2));
+          }
+        }
+      }
+
+      .cartButton {
+        border: none;
+        background-color: $green;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        color: white;
+        transition: $transition;
+        cursor: pointer;
+
+        .cartIcon {
+          font-size: 20px;
+        }
+
+        &:hover {
+          background-color: $hover;
+          color: white;
+        }
+      }
+
+      .buttonDisabled {
+        background: $border;
+      }
+
+      .soonContainer {
+        flex: 1;
+        position: relative;
+        width: fit-content;
+        height: 100%;
+        background: transparent;
+        .soonContent {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 85%;
+          max-width: 85%;
+          border-radius: 50%;
+          padding-top: calc(85% - 2px);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          border: 1px dotted $green;
+          .soonText {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            width: 100%;
+            height: fit-content;
+            text-align: center;
+            font-size: 8px;
+            color: $green;
+            font-family: 'Asap', sans-serif;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .container {
+    height: 400px;
+    width: calc((100% / 3) - (12px * 2 / 3));
+    border: none;
+    border-radius: 16px;
+
+    &.favoriteProductContainer {
+      width: calc((100% / 2) - (12px / 2));
+    }
+    .cardTop {
+      .favoriteButton {
+        width: 36px !important;
+        height: 36px !important;
+      }
+
+      .delivery {
+        gap: 8px;
+        padding: 6px 8px;
+        border-radius: 12px;
+        bottom: 12px;
+        left: 12px;
+
+        .days {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .cardBottom {
+      padding: 10px 15px;
+
+      .productName {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .productSub {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+
+        .vendorName {
+          margin-left: 7px;
+        }
+      }
+
+      .priceAndAddToCard {
+        .priceContainer {
+          width: 70%;
+          .price {
+            font-size: 20px;
+            line-height: 26px;
+          }
+
+          .slash {
+            font-size: 20px;
+          }
+
+          .oldPriceContainer {
+            .oldPrice {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+
+          .starsContainer {
+            margin-left: -2px;
+            .starFilled {
+              font-size: 24px;
+            }
+
+            .starOutline {
+              font-size: 24px;
+            }
+          }
+        }
+
+        .cartButton {
+          position: absolute;
+          border: none;
+          background-color: $green;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          color: white;
+          bottom: 6px;
+          right: 0;
+          transition: $transition;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $hover;
+            color: white;
+
+          }
+
+
+          .cartIcon {
+            font-size: 28px;
+          }
+        }
+
+        .buttonDisabled {
+          background: $border;
+        }
+
+        .soonContainer {
+          .soonContent {
+            width: 80%;
+            max-width: 80%;
+            padding-top: calc(80% - 4px);
+            border: 2px dotted $green;
+            .soonText {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+    }
+
+
+    .attribute {
+      font-size: 14px;
+      color: $textGray;
+    }
+
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .container {
+    height: 400px;
+    width: calc((100% / 4) - (20px * 3 / 4));
+    &.favoriteProductContainer {
+      width: calc((100% / 3) - (20px * 2 / 3));
+    }
+    .cardBottom {
+
+      .variationSelect {
+        margin: 4px 0;
+        width: 75px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 300px;
+    justify-content: flex-start;
+  }
+
+  .cardTop {
+    height: 55% !important;
+  }
+}

@@ -1,0 +1,130 @@
+@import "../../values/colors.module.scss";
+
+.container {
+  background: $white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  // height: 220px;
+  width: 100%;
+  border: .5px solid $textGray;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 6px 6px rgb(0 0 0 / 20%);
+  }
+  .cardTop {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .cardTopLeft {
+      margin-right: 20px;
+      .img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 70px;
+        height: 70px;
+        position: relative;
+      }
+    }
+    .cardTopRight {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Asap', sans-serif;
+      p {
+        font-size: 14px;
+
+        font-weight: 600;
+      }
+      span {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .starsContainer {
+        margin-top: 4px;
+
+        .starFilled {
+          font-size: 16px;
+          color: $starFilled;
+        }
+
+        .starOutline {
+          font-size: 16px;
+          color: $starFilled;
+        }
+      }
+    }
+  }
+  .cardBottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    .images {
+      width: 48%;
+      height: 100%;
+      position: relative;
+    }
+    .image {
+      max-width: 100%;
+      max-height: 100%;
+      margin-right: 5px;
+      border-radius: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    width: calc((100% / 2) - (12px / 2));
+  }
+}
+
+
+@media screen and (min-width:1001px) {
+  .container {
+    width: calc((100% / 3) - (16px * 2 / 3));
+    border: none;
+    border-radius: 12px;
+    .cardTop {
+      .cardTopLeft {
+        margin-right: 12px;
+        .img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      .cardTopRight {
+        p {
+          font-size: 16px;
+          font-weight: 700;
+        }
+        span {
+          font-size: 14px;
+        }
+        .starsContainer {
+          .starFilled {
+            font-size: 20px;
+          }
+
+          .starOutline {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .cardBottom {
+      height: 140px;
+      .image {
+        border-radius: 8px;
+      }
+    }
+  }
+}

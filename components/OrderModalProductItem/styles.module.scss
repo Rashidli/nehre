@@ -1,0 +1,104 @@
+@import "../../values//colors.module.scss";
+
+.productCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 32px 0;
+  border-bottom: 1px solid #e0dcda;
+
+  .productCardImg {
+    border-radius: 6px;
+    width: 94px;
+    height: 78px;
+  }
+
+  .productCardDesc {
+    // min-width: 200px;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      white-space: nowrap;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+
+    span {
+      font-weight: 500;
+      color: #a0a6a6;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  }
+
+  .productQuantityAndPrice {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    .productQuantity {
+      font-weight: 500;
+      color: #a0a6a6;
+      font-size: 14px;
+      line-height: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .productPrice {
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .productButton {
+    display: flex;
+    align-items: center;
+
+    .cartButton {
+      border: none;
+      background-color: $green;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: white;
+      transition: $transition;
+      cursor: pointer;
+
+      .cartIcon {
+        font-size: 20px;
+      }
+
+      &:hover {
+        background-color: $hover;
+        color: white;
+
+
+      }
+    }
+  }
+}

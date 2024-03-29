@@ -1,0 +1,632 @@
+@import '../../values/colors.module.scss';
+
+.container {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid $lightBorderGray;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &.comboContainer {
+    .innerContainer {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    span:has(.showCombo) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .showCombo {
+      width: 100%;
+      display: inline;
+      background: $greenHover;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 400;
+      color: $white;
+      cursor: pointer;
+      transition: $transition;
+      border: none;
+      &:hover {
+        background: $hover;
+      }
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .detailContainer {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    .imageContainer {
+      position: relative;
+      max-height: 100%;
+      min-height: 94px;
+      width: 104px;
+      max-width: 104px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .detailBody {
+      min-height: 100%;
+      max-height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
+      white-space: nowrap;
+      h3 {
+        color: $black;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        display: block;
+        padding-bottom: 6px;
+      }
+
+      span {
+        color: $textGray;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .slash {
+        font-size: 14px;
+        padding: 2px;
+      }
+
+      .deliveryDateContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 12px;
+        gap: 2px;
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $containerBg;
+          height: 24px;
+          width: 24px;
+          color: $black;
+          font-size: 12px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .actionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin: 12px 0;
+    .showComboContent {
+      display: none;
+    }
+    .deleteWholeProduct {
+      display: inline-block;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: $textGray;
+      justify-self: flex-end;
+      transition: $transition;
+
+      &:hover {
+        color: $red;
+      }
+    }
+    .counterAndPriceContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+    }
+    .counter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+
+      .button {
+        background: $green;
+        color: white;
+        border-radius: 50%;
+        border: none;
+        width: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 36px;
+        transition: $transition;
+        cursor: pointer;
+
+
+        .decreaseIcon {
+          font-size: 18px;
+        }
+
+        .increaseIcon {
+          font-size: 18px;
+        }
+
+        &.removeButton {
+          background: $lightBorderGray;
+          svg {
+            font-size: 20px;
+            color: $textGray;
+          }
+          &:hover {
+            background: $border;
+          }
+        }
+
+        &:hover {
+          background: $main;
+        }
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .deactivated {
+        background: $border;
+
+        &:hover {
+          background: $border;
+        }
+      }
+    }
+
+    .priceContainer {
+      font-size: 16px;
+      color: black;
+      font-weight: 500;
+      text-align: center;
+      width: 100px;
+
+      span {
+        text-align: right;
+        margin-right: 4px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+.comboModalContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1152px;
+  height: 100vh;
+  background: $white;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-bottom: 50px;
+  .comboModalContent {
+    width: 100%;
+    padding: 37px;
+    flex: 1;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      background: 0 0;
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #ebebeb;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      width: 6px;
+      height: 50px;
+    }
+    .closeButton {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 0px;
+      svg {
+        color: $border;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .comboModalDetailItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+        color: #a0a6a6;
+        max-width: 50%;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+      span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #2c2e29;
+      }
+    }
+    .comboModalHeader {
+      display: flex;
+      flex-direction: column;
+      padding: 0px 0px 16px 0;
+      gap: 16px;
+      border-bottom: 1px solid $lightBorderGray;
+    }
+    .comboModalItems {
+      .comboItemContainer {
+        position: relative;
+        display: flex;
+        border-bottom: 1px solid $lightBorderGray;
+        padding: 20px 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        
+        .imageContainer {
+          position: relative;
+          max-height: 100%;
+          min-height: 94px;
+          width: 104px;
+          max-width: 104px;
+          border-radius: 6px;
+          overflow: hidden;
+        }
+        
+        .comboItemMain {
+          position: relative;
+          flex: 1;
+          min-height: 100%;
+          max-height: 100%;
+          display: flex;
+          flex-direction: column;
+          padding-left: 20px;
+          white-space: nowrap;
+          .comboItemTitle {
+            color: $black;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 24px;
+            display: block;
+            padding-bottom: 10px;
+          }
+          .comboItemDetail {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            p {
+              flex: 2;
+              min-width: 50%;
+              color: $textGray;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+            }
+            .comboItemQuantity {
+              flex: 1;
+              color: $textGray;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+              text-align: end;
+            }
+            .comboItemTotalPrice {
+              flex: 1;
+              text-align: end;
+              font-size: 18px;
+              color: black;
+              font-weight: 500;
+            }
+          }
+          .comboItemFooter {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 15px;
+            span {
+              color: $textDarkGray;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+            }
+          }
+          .slash {
+            font-size: 14px;
+            padding: 2px;
+          }
+        }
+      }
+    }
+    .comboModalFooter {
+      display: flex;
+      flex-direction: column;
+      padding: 24px 0 0 0;
+      gap: 16px;
+      border-top: 1px solid $lightBorderGray;
+      .comboModalDetailItem {
+        p {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 26px;
+        }
+        span {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    &.comboContainer {
+      .innerContainer {
+        width: 100%;
+        flex-direction: column;
+      }
+      .actionContainer {
+        padding-left: 0;
+      }
+    }
+
+    .detailContainer {
+      width: 100%;
+      align-items: flex-start;
+      .imageContainer {
+        min-height: 75px;
+        width: 92px;
+        max-width: 92px;
+      }
+      .detailBody {
+        padding-left: 12px;
+        h3 {
+          padding-right: 30px;
+          max-width: 100%;
+          font-size: 14px;
+          line-height: 18px;
+        }
+        span {
+          font-size: 12px;
+          line-height: 16px;
+        }
+        .slash {
+          font-size: 12px;
+          padding: 2px;
+        }
+        .deliveryDateContainer {
+          gap: 3px;
+          flex-wrap: wrap;
+        }
+        .showCombo {
+          display: none;
+        }
+      }
+    }
+
+    .actionContainer {
+      width: 100%;
+      padding-left: 104px;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+      margin: 0px;
+
+      .showComboContent {
+        display: inline-block;
+        .showCombo {
+          width: 92px;
+          display: inline;
+          background: $greenHover;
+          padding: 5px 10px;
+          border-radius: 6px;
+          font-size: 12px;
+          font-weight: 400;
+          color: $white;
+          cursor: pointer;
+          transition: $transition;
+          border: none;
+          &:hover {
+            background: $hover;
+          }
+        }
+      }
+
+      .deleteWholeProduct {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        padding: 0px;
+      }
+      .counterAndPriceContainer {
+        padding-left: 12px;
+      }
+      .counter {
+        gap: 10px;
+        .button {
+          width: 30px;
+          height: 30px;
+          .decreaseIcon {
+            font-size: 16px;
+          }
+          .increaseIcon {
+            font-size: 16px;
+          }
+          &.removeButton {
+            svg {
+              font-size: 18px;
+            }
+          }
+        }
+        span {
+          font-weight: 500;
+        }
+      }
+
+      .priceContainer {
+        text-align: right;
+        width: auto;
+        span {
+          text-align: right;
+          margin-right: 0px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .comboModalContainer {
+    .comboModalContent {
+      padding: 37px 24px;
+      .closeButton {
+        right: 8px;
+        top: 8px;
+        width: 25px;
+        height: 25px;
+      }
+      .comboModalDetailItem {
+        p {
+          font-size: 14px;
+          line-height: 16px;
+        }
+        span {
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+      .comboModalHeader {
+        gap: 12px;
+      }
+      .comboModalItems {
+        .comboItemContainer {
+          .imageContainer {
+            min-height: 75px;
+            width: 92px;
+            max-width: 92px;
+            border-radius: 6px;
+          }
+          .comboItemMain {
+            padding-left: 16px;
+            .comboItemTitle {
+              font-size: 16px;
+              line-height: 22px;
+              padding-bottom: 6px;
+            }
+            .comboItemDetail {
+              p {
+                flex: 1;
+                min-width: 0;
+                font-size: 12px;
+                line-height: 14px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              .comboItemQuantity {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+              }
+              .comboItemTotalPrice {
+                font-size: 14px;
+                font-weight: 500;
+              }
+            }
+            .comboItemFooter {
+              margin-top: 10px;
+              span {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+              }
+            }
+          }
+        }
+      }
+      .comboModalFooter {
+        .comboModalDetailItem {
+          p {
+            font-size: 16px;
+            line-height: 18px;
+          }
+          span {
+            font-size: 18px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }  
+}
+
+@media screen and (min-width:1000px) {
+  // Combo Products Detail Modal
+  .comboModalContainer {
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    max-width: 1152px;
+    width: 90%;
+    border-radius: 10px;
+    margin: 0 auto;
+    background: $white;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    padding-bottom: 0px;
+  }
+}

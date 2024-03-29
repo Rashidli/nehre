@@ -1,0 +1,218 @@
+@import '../../../../../values/colors.module.scss';
+
+
+
+.passwordContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.showPass {
+  border: none;
+  background: transparent;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  right: 8px;
+}
+
+.otpContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.otpInput {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid $main;
+  font-size: 36px;
+  background: transparent;
+  font-weight: 200;
+  color: $main;
+
+  &::selection {
+    color: $main;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $starFilled;
+  }
+}
+
+.forgotContainer {
+  display: flex;
+  flex-direction: column;
+
+  .forgotTitle {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .phoneContainer {
+    width: 100%;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    color: $textGray;
+    line-height: 18px;
+    margin-bottom: 24px;
+  }
+
+  .codeTimeOut {
+    font-size: 14px;
+    font-weight: 400;
+    color: $textGray;
+    line-height: 18px;
+    margin-top: 12px;
+  }
+
+  .codeTime {
+    font-size: 14px;
+    font-weight: 400;
+    color: $textGray;
+    line-height: 18px;
+    margin-top: 12px;
+  }
+
+  .loginInputs {
+    width: 100%;
+    border: 1px solid $borderWhite;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 16px;
+    height: 56px;
+    border: 1px solid $main;
+  }
+
+  .phoneLabel {
+    position: absolute;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 400;
+    color: $textGray;
+  }
+
+  .phoneInput {
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 16px;
+    height: 56px;
+    border: none;
+    outline: none;
+    background: #efefef !important;
+    transition: all 300ms ease;
+    margin-bottom: 1rem;
+    &:hover{
+      background:  #e2e2e2 !important;
+    }
+    &:focus {
+      background: #fff !important;
+      outline: solid 1px $focusedBorder;
+    }
+
+  }
+
+
+
+
+
+  .registerButton {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    height: 50px;
+    background: $green;
+    color: $textWhite;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .userAgreement {
+    font-size: 14px;
+    padding-left: 4px;
+
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+    height: 20px;
+  }
+
+  .userAgreementInput {
+    width: 16px;
+    height: 16px;
+  }
+
+  .actionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .submit {
+      border: none;
+      height: 50px;
+      background: $main;
+      color: $textWhite;
+      font-size: 16px;
+      font-weight: bold;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        background: $hover;
+      }
+    }
+
+    .back {
+      border: none;
+      height: 50px;
+      background: $white;
+      border: 1px solid $border;
+      color: $black;
+      font-size: 16px;
+      font-weight: bold;
+      font-weight: 500;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 300ms ease;
+
+      &:hover {
+        border: 1px solid $green;
+        background: $greenHoverOpacity50;
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .forgotContainer {
+    .forgotTitle {
+      font-size: 24px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      color: $textGray;
+      line-height: 18px;
+      margin-bottom: 24px;
+    }
+  }
+}

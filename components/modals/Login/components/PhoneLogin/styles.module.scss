@@ -1,0 +1,172 @@
+@import '../../../../../values/colors.module.scss';
+
+.errorStyle {
+  border-color: $red !important;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+
+
+  .headerContainer {
+
+    .loginHeader {
+      font-size: 20px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      color: $textGray;
+      line-height: 18px;
+      margin-bottom: 24px;
+    }
+
+
+  }
+
+  .passwordContainer {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    .loginInputs {
+      width: 100%;
+      border: 1px solid $borderWhite;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 16px;
+      height: 56px;
+      border: 1px solid $main;
+
+    }
+
+    .erroredInput {
+      border-color: $red;
+    }
+
+    .showPass {
+      border: none;
+      background: transparent;
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      right: 8px;
+    }
+
+  }
+
+
+  .phoneLabel {
+    position: absolute;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: $textGray;
+  }
+
+  .phoneInput {
+    border-radius: 12px;
+    padding: 10px 16px;
+    padding-top: 20px;
+    font-size: 16px;
+    border: 1px solid $main;
+    width: 100%;
+    font-weight: 500;
+    transition: $transition;
+    border: none;
+    outline: none;
+    background:  #efefef;
+    transition: all 300ms ease;
+    &:hover{
+      background:  #e2e2e2;
+    }
+  }
+  .phoneInput:focus{
+    background: #fff;
+    outline: solid 1px $focusedBorder;
+  }
+
+
+  .loginButton {
+    border: none;
+    height: 50px;
+    background: $green;
+    color: $textWhite;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 12px;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: $transition;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $greenHover;
+    }
+
+  }
+
+  .emailOrPhone {
+    font-size: 14px;
+    font-weight: 400;
+
+    border: none;
+    border-radius: 16px;
+    height: 50px;
+    background: $main;
+    color: $textWhite;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+
+  .userAgreement {
+    font-size: 14px;
+    padding-left: 4px;
+
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+    height: 20px;
+
+  }
+
+  .userAgreementInput {
+    width: 16px;
+    height: 16px;
+  }
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .loginContainer {
+    .headerContainer {
+
+      .loginHeader {
+        font-size: 24px;
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        color: $textGray;
+        line-height: 18px;
+        margin-bottom: 24px;
+      }
+
+
+    }
+  }
+
+}

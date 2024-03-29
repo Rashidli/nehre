@@ -1,0 +1,211 @@
+@import '../../../values/colors.module.scss';
+
+.container {
+  background-color: $containerBg;
+  transition: $transition;
+
+  .innerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 8px;
+    align-items: center;
+    justify-content: space-between;
+    transition: $transition;
+    gap: 10px;
+
+    .bigImage {
+      position: relative;
+    }
+
+
+    .middleContainer {
+      display: flex;
+      justify-content: space-between;
+
+      .searchAndInfoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        justify-self: flex-end;
+
+        .inputContainer {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          border-radius: 25px;
+          width: 240px;
+          background: $white;
+
+          .input {
+            border: none;
+            flex: 1;
+            padding-left: 8px;
+
+            outline: none;
+
+            &:focus {
+              border: none;
+            }
+          }
+
+          .searchButton {
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+
+        }
+
+        .phoneContainer {
+          font-size: 18px;
+          .phone {
+            color: $main;
+            display: flex;
+            align-items: center;
+
+            .link {
+              text-decoration: none;
+              color: $textGray;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .actionsContainer {
+        display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+
+        .searchButton {
+          border: none;
+          width: 35px;
+          height: 35px;
+          background: transparent;
+          color: $main;
+        }
+
+        .menuButtonContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background-color: $containerBg;
+          border-radius: 5px;
+          padding: 0;
+          cursor: pointer;
+
+
+          .menuIcon {
+            width: 35px;
+            height: 35px;
+            filter: invert(56%) sepia(5%) saturate(10%) hue-rotate(28deg) brightness(88%) contrast(89%);
+            filter: invert(28%) sepia(96%) saturate(458%) hue-rotate(174deg) brightness(95%) contrast(88%);
+          }
+        }
+      }
+    }
+
+  }
+
+
+  .scrollStyle {
+    padding: 10px 8px;
+
+  }
+}
+
+
+@media screen and (min-width:651px) and (max-width:1000px) {
+  .container {
+    .innerContainer {
+      align-items: center;
+      padding: 20px;
+      gap: 50px;
+      align-items: flex-end;
+
+      .middleContainer {
+        flex: 1;
+
+        .searchAndInfoContainer {
+          .phoneContainer {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .scrollStyle {
+      padding: 10px 20px;
+
+    }
+
+  }
+}
+
+@media screen and (min-width:1001px) {
+  .container {
+    border-radius: 30px 30px 0 0;
+
+    .innerContainer {
+      padding: 10px 50px;
+
+      gap: 50px;
+      align-items: flex-end;
+
+      .bigImage {
+        width: 140px;
+        height: 110px;
+        position: relative;
+        transition: $transition;
+      }
+
+      .scrollImage {
+        width: 100px;
+        height: 41px;
+      }
+
+      .middleContainer {
+        flex: 1;
+      }
+
+      .scrollStyle {
+        padding: 10px 8px;
+        border-radius: 0;
+        align-items: center;
+        border-radius: 0;
+        margin: 0 auto;
+
+      }
+    }
+
+    .scrollStyle {
+      align-items: center;
+    }
+  }
+
+
+  .noBorder {
+    border-radius: 0;
+  }
+
+  .rightImage {
+    position: relative;
+    width: 140px;
+    height: 110px;
+    transition: $transition;
+  }
+
+  .scrollImageRight {
+    height: 0;
+    opacity: 0;
+
+  }
+
+}

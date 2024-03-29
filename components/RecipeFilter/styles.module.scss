@@ -1,0 +1,140 @@
+@import '../../values/colors.module.scss';
+
+.container {
+    margin-bottom: 40px;
+    padding: 0 8px;
+    .inputContainer {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        
+        div {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: none;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: none;
+            flex: 0.9;
+
+            input {
+                border-radius: inherit;
+                width: 100%;
+                border: none;
+                height: 100%;
+                padding: 17px 50px 17px 20px;
+                font-size: 18px;
+                 background-color: $inputBg;
+                line-height: 22px;
+                
+                ::-moz-focus-inner { 
+                    border: 0;
+                }
+               &:focus { 
+                    outline: none;
+               }
+            }
+
+            button {
+                cursor: pointer;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                right: 0;
+                border: none;
+                border-radius: 30px;
+                background-color: $green;
+                color: $white;
+                height: 100%;
+                padding: 0px 24px;
+                font-size: 20px;
+                font-family: 'Asap';
+                transition: background-color $transition;
+
+                &:hover {
+                    background-color: $greenHover;
+                }
+            }
+        }
+
+        .filterButton { 
+            flex: 0.1;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            right: 0;
+            border: none;
+            border-radius: 30px;
+            background-color: transparent;
+            color: $green;
+            height: 100%;
+            width: 200px;
+            font-size: 20px;
+            font-family: 'Asap';
+           
+        }
+
+    }
+
+    .optionsContainer {
+        .filterTitle { 
+            font-size: 18px;
+            line-height: 22px;
+            color: $textGray;
+            margin: 12px 0;
+        }
+
+
+    }
+
+    .rangeContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .resetButton { 
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        border: none;
+        border-radius: 30px;
+        background-color: transparent;
+        color: $green;
+        height: 100%;
+        font-size: 20px;
+        padding: 8px 0;
+        font-family: 'Asap';
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+
+        .inputContainer {
+            gap: 20px;
+            div{ 
+              button{ 
+                width: 150px;
+              }
+            }
+
+
+        }
+
+        .optionsContainer {}
+
+        .rangeContainer {
+            flex-direction: row;
+        }
+
+    }
+}

@@ -1,0 +1,133 @@
+@import '../../../../../values/colors.module.scss';
+
+
+.error {
+  border-color: $red !important;
+}
+
+.showPass {
+  border: none;
+  background: transparent;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  right: 8px;
+
+}
+
+.loginContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .loginHeader {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .passwordContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+  }
+
+
+
+  .actionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .forgotPassword {
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+      border-radius: 12px;
+      height: 50px;
+      background: $white;
+      border: 1px solid $border;
+      color: $black;
+      font-size: 16px;
+      font-size: 16px;
+      cursor: pointer;
+
+      transition: all 300ms ease;
+      &:hover {
+        border: 1px solid $green;
+        background: $greenHoverOpacity50;
+      }
+
+    }
+
+
+
+    .loginButton {
+      border: none;
+      height: 50px;
+      background: $green;
+      color: $textWhite;
+      font-size: 16px;
+      font-weight: bold;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: 0.4s;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background: $greenHover;
+      }
+
+    }
+  }
+}
+
+
+.loginInputs {
+  width: 100%;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 16px;
+  height: 56px;
+  border: none;
+  outline: none;
+  background: #efefef !important;
+  transition: all 300ms ease;
+  &:hover{
+    background:  #e2e2e2 !important;
+  }
+  &:focus {
+    background: #fff !important;
+    outline: solid 1px $focusedBorder;
+  }
+}
+
+.emailContainer{
+  position: relative;
+  .dynamicPlaceholder {
+    color: #757575;
+    position: absolute;
+    font-size: 16px;
+    top: 20px;
+    left: 16px;
+    pointer-events: none;
+    transition: all 300ms ease;
+
+  }
+  input:focus ~ .dynamicPlaceholder{
+    font-size: 10px;
+    top: 5px;
+    left: 16px;
+  } 
+  input:not(:placeholder-shown) ~ .dynamicPlaceholder{
+    font-size: 10px;
+    top: 5px;
+    left: 16px;
+  } 
+}
+.passwordInp::-ms-reveal {
+  display : none ;
+}

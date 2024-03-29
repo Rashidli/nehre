@@ -1,0 +1,139 @@
+@import '../../values/colors.module.scss';
+
+.pageHeader {
+    padding: 12px 0;
+
+    .pageTitle {
+        font-size: 28px;
+        color: $textBlack;
+        margin: 10px 16px;
+    }
+    .overFlowContainer {
+        padding: 0 16px;
+        overflow: scroll;
+
+        .subCategoriesContainer {
+            display: flex;
+            gap: 10px;
+            padding-bottom: 16px;
+        }
+    }
+
+    .filterContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px;
+        margin-bottom: 16px;
+
+        .text {
+            font-size: 14px;
+            color: $textGray;
+        }
+    }
+}
+.noProductContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+    p {
+        font-size: 2rem;
+    }
+}
+
+.pageFooter {
+    padding: 12px;
+    .footerTitle {
+        font-size: 16px;
+        color: $green;
+        margin-bottom: 12px;
+    }
+    .descriptionContainer {
+        .description {
+            font-size: 16px;
+            line-height: 22px;
+            color: $black;
+            font-weight: 400;
+            margin-bottom: 12px;
+
+            span {
+            font-weight: 600;
+            margin-right: 4px;
+            }
+            .moreTextButton {
+            color: $green;
+            font-weight: 300;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                outline: none;
+            }
+            }
+        }
+    }
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+@media screen and (min-width:650px) {
+    .pageHeader {
+        .pageTitle {
+            font-size: 40px;
+            margin: 10px 0px;
+        }
+        .overFlowContainer {
+            padding: 0 0px;
+            overflow: hidden;
+
+            .subCategoriesContainer {
+                flex-wrap: wrap;
+            }
+        }
+    }
+    .pageFooter {
+        padding: 24px 0;
+        .footerTitle {
+            font-size: 24px;
+        }
+        .descriptionContainer {
+            .description {
+              font-size: 18px;
+              line-height: 22px;
+              font-weight: 300;
+    
+              span {
+                font-weight: 600;
+                margin-right: 8px;
+              }
+    
+              .moreTextButton {
+                padding: 0;
+                margin-left: 4px;
+                font-weight: 400;
+                font-size: 14px;
+                gap: 4px;
+              }
+            }
+        }
+    }
+}

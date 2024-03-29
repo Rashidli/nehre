@@ -1,0 +1,87 @@
+@import '../../values/colors.module.scss';
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pageHeader {
+  padding: 12px 0;
+
+  .pageTitle {
+    font-size: 28px;
+    color: $textBlack;
+    margin: 10px 16px;
+  }
+
+  .overFlowContainer {
+    padding: 0 16px;
+    overflow: scroll;
+
+    .subCategoriesContainer {
+      display: flex;
+      gap: 10px;
+      padding-bottom: 16px;
+
+    }
+
+  }
+
+  .filterContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    margin-bottom: 16px;
+
+    .text {
+      font-size: 14px;
+      color: $textGray;
+    }
+  }
+}
+
+.noProductContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+
+  p {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+@media screen and (min-width:650px) {
+
+  .pageHeader {
+
+    .pageTitle {
+      font-size: 40px;
+      margin: 10px 0px;
+    }
+
+    .overFlowContainer {
+      padding: 0 0px;
+      overflow: hidden;
+
+      .subCategoriesContainer {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .pageHeader{
+    margin-top: 5rem;
+  }
+}

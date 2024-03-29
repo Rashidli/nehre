@@ -1,0 +1,83 @@
+@import '../../../values/colors.module.scss';
+
+.container {
+    position: relative;
+    overflow: hidden;
+    margin: 10px 8px;
+    border-radius: 15px;
+    height: 200px;
+    transition: $transition;
+    background: linear-gradient(180deg,rgba(0, 0, 0, .1), rgba(0, 0, 0, .860382));
+        display: flex;
+    &:hover {
+        box-shadow: 1px 1px 5px 5px rgb(0 0 0 / 20%);
+    }
+
+    .imageContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+
+    }
+
+    .infoContainer {
+        padding: 8px ;
+        display: flex;
+        flex: 1;
+        align-self: flex-end;
+        flex-direction: column;
+        border-radius: 15px;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .cardTitle {
+            align-self: flex-start;
+            padding-bottom: 8px;
+            font-family: 'Asap', sans-serif;
+            padding-right: 4px;
+            color: $white;
+            font-size: 16px;
+        }
+
+        .moreLink {
+            margin: 0;
+            transition: $transition;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 30px;
+            font-size: 16px;
+            background-color: $main;
+            border-radius: 25px;
+            color: $white;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $hover ;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:651px) {
+    .container {
+        height: 345px;
+        .infoContainer {
+            padding: 24px;
+            .cardTitle {
+                font-size: 24px;
+            }
+
+            .moreLink {
+                width: 110px;
+                height: 40px;
+            }
+        }
+    }
+}

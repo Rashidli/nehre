@@ -1,0 +1,119 @@
+@import "../../values/colors.module.scss";
+
+.container {
+  border-radius: 10px;
+  position: relative;
+  height: 386px;
+  transition: $transition;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $white;
+  &:hover {
+    box-shadow: 0px 0px 6px 6px rgb(0 0 0 / 20%);
+  }
+
+  &_border {
+    border: 1px solid #ff7a2c;
+  }
+
+  .button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: transparent;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    height: calc(100% - 8px);
+    width: calc(100% - 8px);
+    padding: 20px 16px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-radius: 8px;
+
+    .questionParagraph {
+      max-width: 200px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    font-family: 'Asap', sans-serif;
+    color: rgb(0 0 0 /70%);
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+
+
+}
+@media screen and (max-width: 800px) {
+  .container {
+    .question {
+      p {
+        max-width: max-content !important;
+      }
+    }
+    .questionParagraph {
+      font-size: 16px;
+    }
+  }
+}
+.modal_question {
+  background: #fff;
+  width: 100%;
+  padding: 32px;
+  // border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px 8px 0px 0px;
+
+  .questionParagraph {
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+  
+}
+
+.modal_answer{
+    height: 500px;
+    overflow-y: scroll;
+    margin-top: 10px!important;
+    // margin-left:10px!important;
+    padding: 32px;
+  }
+.mainContainer {
+  width: 522px !important;
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    height: 300px;
+    .question {
+      p {
+        max-width: max-content !important;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+  .modal_container {
+    height: 100%;
+  }
+  .mainContainer {
+    padding: 15px !important;
+    width: 100% !important;
+    height: 100vh !important;
+  }
+}

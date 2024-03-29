@@ -1,0 +1,90 @@
+.container {
+    width: 100%;
+    height: 68px;
+    border: 2px solid #ddd;
+    display: flex;
+
+    .mainAdress {
+        flex: 6;
+        border-right: 2px solid #ddd;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        font-weight: 100;
+        div{
+            flex-shrink: 0;
+        }
+    }
+
+    .typeButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 50px;
+        flex-shrink: 0;
+        border-right: 2px solid #ddd;
+        padding: 8px;
+        
+        .addressButton {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        
+    }
+    
+    .buttons {
+        display: flex;
+        align-items: center;
+        min-width: 130px;
+        flex-shrink: 0;
+        justify-content: space-between;
+        flex: 2;
+        padding: 8px;
+        .addressActionButton {
+            border: 2px solid #ebebeb;
+            background-color: #fff;
+            color: #151b1a;
+            border-radius: 12px;
+            font-size: 10px;
+            line-height: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 14px 20px;
+        }
+
+    }
+}
+@media screen and (max-width: 1200px) {
+    .buttons{
+        flex: 3 !important;
+    } 
+}
+
+@media screen and (max-width: 768px) {
+    .mainAdress{
+        font-size: 12px !important;
+        padding: 0 0 0 4px !important;
+    }
+    .typeButton {
+        padding: 4px !important;
+        .addressButton {
+            font-size: 12px !important;
+        }
+    }
+    .buttons{
+        padding: 4px !important;
+        .addressActionButton {
+            border-radius: 8px  !important;
+            font-size: 12px  !important;
+            line-height: 16px  !important;
+            padding: 8px 12px !important;
+        }
+    }
+}

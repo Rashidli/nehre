@@ -1,0 +1,17 @@
+
+@import '../../values/colors.module.scss';
+.container { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 105;
+    width: 100vw;
+    max-width: 1200px;
+    transition: $transition;
+}
+.scrollStyles { 
+    max-width: 100vw;
+
+}

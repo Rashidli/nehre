@@ -1,0 +1,449 @@
+@import '../../values/colors.module.scss';
+
+.container {
+  .comboInfoContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 12px;
+
+    .comboTop {
+      display: flex;
+      flex-direction: column;
+
+      .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 325px;
+        order: 2;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .delivery {
+          display: flex;
+          gap: 8px;
+          background: $white;
+          border: 1px solid $border;
+          padding: 6px 8px;
+          border-radius: 8px;
+          position: absolute;
+          bottom: 12px;
+          left: 12px;
+          z-index: 100;
+
+          .days {
+            font-size: 14px;
+            font-weight: 300;
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .comboBottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+      order: 1;
+      padding-top: 12px;
+
+      .comboInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .comboNameAndFavoriteButton {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+
+          .favoriteButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transform: rotate(25deg);
+            border: transparent;
+            color: $red;
+            border: 2px solid $textGray;
+            cursor: pointer;
+            background: $white;
+
+            &.inFavoriteButton {
+              border: 2px solid $red;
+
+              svg {
+                fill: $red;
+              }
+            }
+
+            svg {
+              width: 100%;
+              fill: $textGray;
+            }
+
+            &:hover {
+              color: $red;
+              border-color: $red;
+
+              svg {
+                fill: $red;
+              }
+            }
+          }
+        }
+
+
+
+        .comboCountWeight {
+          color: $textGray;
+          font-size: 14px;
+        }
+
+        .comboName {
+          font-weight: 500;
+          color: $textBlack;
+          font-size: 22px;
+        }
+
+        .descriptionContainer {
+          .description {
+            font-size: 16px;
+            line-height: 22px;
+            color: $black;
+            font-weight: 400;
+            margin-bottom: 12px;
+
+            span {
+              font-weight: 600;
+              margin-right: 4px;
+            }
+
+            .moreTextButton {
+              color: $green;
+              font-weight: 300;
+              font-size: 12px;
+              cursor: pointer;
+              border: none;
+              background: none;
+              outline: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 4px;
+
+              &:focus {
+                outline: none;
+              }
+
+              &:hover {
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+
+      .comboBottomContent {
+        position: relative !important;
+
+        .priceContainer {
+          .oldPriceContainer {
+            .oldPrice {
+              text-decoration: line-through;
+              color: $textGray;
+              margin-right: 4px;
+            }
+
+            .oldPriceImage {
+              filter: invert(57%) sepia(0%) saturate(58%) hue-rotate(283deg) brightness(89%) contrast(93%);
+            }
+
+            &~.price {
+              color: $red;
+            }
+          }
+
+          .price {
+            color: $black;
+            font-weight: 500;
+            font-size: 24px;
+            margin-right: 4px;
+          }
+
+          .currentPriceImage {
+            filter: invert(29%) sepia(73%) saturate(3690%) hue-rotate(340deg) brightness(103%) contrast(84%);
+          }
+
+          .attribute {
+            color: $textGray;
+            font-size: 16px;
+          }
+        }
+
+        .addToBasket {
+          margin-top: 24px;
+          border: none;
+          background-color: $main;
+          color: $white;
+          padding: 16px;
+          border-radius: 12px;
+          transition: $transition;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $hover
+          }
+        }
+      }
+
+    }
+
+
+  }
+}
+
+.basketAndFavorite {
+  position: relative !important;
+
+  .addBasket {
+    margin-top: 16px;
+    min-width: 200px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    align-items: center;
+    padding: 16px;
+    background: $green;
+    border: none;
+    color: $white;
+    z-index: 10;
+    transition: 0.4s;
+
+    &:hover {
+      background: $greenHover;
+    }
+  }
+
+  .buttonDisabled {
+    background: $textGray;
+  }
+}
+
+.counter {
+  margin-top: 16px;
+  max-width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  // width: 100px;
+
+  .button {
+    background: $green;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    width: 48px !important;
+    justify-content: center;
+    align-items: center;
+    height: 48px !important;
+    transition: 0.2s;
+    cursor: pointer;
+
+
+    .decreaseIcon {
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+    }
+
+    .increaseIcon {
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+    }
+
+    &:hover {
+      background: $main;
+    }
+  }
+
+  span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .deactivated {
+    background: $border;
+
+    &:hover {
+      background: $border;
+    }
+  }
+}
+
+
+@media screen and (min-width:1001px) {
+  .container {
+    .comboInfoContainer {
+      flex-direction: row;
+      padding: 32px 0;
+
+      .comboTop {
+        .imageContainer {
+          order: 1;
+          margin: 0px;
+
+          width: 570px;
+          height: 420px;
+          border-radius: 20px;
+          overflow: hidden;
+        }
+      }
+
+      .comboBottom {
+        order: 2;
+        padding: 0 0 0 24px;
+
+        .comboInfo {
+          .comboName {
+            font-size: 28px;
+            line-height: 34px;
+          }
+
+          .descriptionContainer {
+            .description {
+              font-size: 18px;
+              line-height: 22px;
+              font-weight: 300;
+
+              span {
+                font-weight: 600;
+                margin-right: 8px;
+              }
+
+              .moreTextButton {
+                padding: 0;
+                margin-left: 4px;
+                font-weight: 400;
+                font-size: 14px;
+                gap: 4px;
+              }
+            }
+          }
+        }
+
+
+        .comboBottomContent {
+          position: relative !important;
+
+          .priceContainer {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            .oldPriceContainer {
+              .oldPrice {
+                text-decoration: line-through;
+                color: $textGray;
+                margin-right: 4px;
+              }
+            }
+
+            .price {
+              color: $black;
+              font-weight: 500;
+              font-size: 24px;
+              margin-right: 4px;
+            }
+
+            .attribute {
+              font-size: 16px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  .basketAndFavorite {
+    display: flex;
+    gap: 12px;
+    flex: 2;
+    position: relative;
+
+    .addBasket {
+      width: 100%;
+      position: relative;
+      border-radius: 12px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $greenHover;
+      }
+    }
+  }
+
+  .counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    // width: 100px;
+
+    .button {
+      background: $green;
+      color: white;
+      border-radius: 50%;
+      border: none;
+      width: 48px !important;
+      justify-content: center;
+      align-items: center;
+      height: 48px !important;
+      transition: 0.2s;
+      cursor: pointer;
+
+
+      .decreaseIcon {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+      }
+
+      .increaseIcon {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+      }
+
+      &:hover {
+        background: $main;
+      }
+    }
+
+    span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .deactivated {
+      background: $border;
+
+      &:hover {
+        background: $border;
+      }
+    }
+  }
+
+}

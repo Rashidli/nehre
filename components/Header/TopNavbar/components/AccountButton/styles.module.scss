@@ -1,0 +1,278 @@
+@import '../../../../../values/colors.module.scss';
+
+.dropContainer {
+  width: 35px;
+  height: 35px;
+  position: relative;
+
+  .button {
+    border: none;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: $accountBg;
+    color: $textWhite;
+    border: 1px solid $borderWhite;
+    font-size: 20px;
+    cursor: pointer;
+
+
+    &:hover {
+      border: 1px solid $accountBg;
+      background-color: $textWhite;
+      color: $accountBg;
+    }
+
+  }
+}
+
+.dropContainer:hover .dropdownMenu {
+  display: block;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 36px;
+  left: -60px;
+  width: 160px;
+  z-index: 5;
+  padding: 16px 0 0;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 0 0 5px 5px;
+
+  .dropdownMenuList {
+    display: flex;
+    flex-direction: column;
+
+    .dropdownMenuListItem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 16px;
+      transition: all 300ms ease;
+      cursor: pointer;
+      background: #fff;
+      opacity: 0;
+
+      &:hover {
+        background: #f0f0f0
+      }
+    }
+
+    .dropdownMenuListItem1 {
+      transform-origin: top center;
+      animation: translateDropdownMenuItem 500ms 80ms ease-in-out forwards;
+    }
+
+    .dropdownMenuListItem2 {
+      transform-origin: top center;
+      animation: translateDropdownMenuItem 500ms 160ms ease-in-out forwards;
+    }
+
+    .dropdownMenuListItem3 {
+      transform-origin: top center;
+      animation: translateDropdownMenuItem 500ms 240ms ease-in-out forwards;
+    }
+
+    .dropdownMenuListItem4 {
+      transform-origin: top center;
+      animation: translateDropdownMenuItem 500ms 320ms ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes translateDropdownMenuItem {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+.logOutModalContainer {
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .logOutModalButton {
+    border: none;
+    outline: none;
+    background: #2d5d9b;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 18px;
+    padding: 12px;
+    transition: all 300ms ease;
+    cursor: pointer;
+
+    &:hover {
+      background: #2d83d8;
+    }
+  }
+}
+
+.productModal {
+  border: none;
+  overflow: hidden;
+}
+
+.modal {
+  justify-content: center;
+  align-items: center;
+
+  .loginModal {
+    border-radius: 32px;
+    border: none;
+    width: 400px;
+
+    .loginContainer {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 20px;
+
+      .loginHeader {
+        font-weight: 560;
+        margin-bottom: 20px;
+
+      }
+
+      .phoneContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .loginInputs {
+          border: 1px solid $borderWhite;
+          border-radius: 12px;
+          padding: 10px 16px;
+          font-size: 16px;
+          height: 56px;
+          border: 1px solid $main;
+        }
+
+        .phoneLabel {
+          position: absolute;
+          padding: 5px 16px;
+          font-size: 12px;
+          font-weight: 400;
+
+          color: $textGray;
+        }
+
+        .phoneInput {
+          border: 1px solid $borderWhite;
+          border-radius: 12px;
+          padding: 10px 16px;
+          padding-top: 20px;
+          font-size: 16px;
+          border: 1px solid $main;
+        }
+
+
+      }
+
+      .emailContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .loginInputs {
+          border: 1px solid $borderWhite;
+          border-radius: 12px;
+          padding: 10px 16px;
+          font-size: 16px;
+          height: 56px;
+          border: 1px solid $main;
+        }
+      }
+
+      .actionContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+
+        .loginForgotContainer {
+          display: flex;
+          gap: 12px;
+
+          .forgotPassword {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 400;
+
+            border: none;
+            border-radius: 16px;
+            height: 50px;
+            background: $accountBg;
+            color: $textWhite;
+            font-size: 16px;
+            font-weight: bold;
+          }
+
+          .loginButton {
+            flex: 1;
+            border: none;
+            border-radius: 16px;
+            height: 50px;
+            background: $green;
+            color: $textWhite;
+            font-size: 16px;
+            font-weight: bold;
+
+
+          }
+        }
+
+        .emailOrPhone {
+          font-size: 14px;
+          font-weight: 400;
+
+          border: none;
+          border-radius: 16px;
+          height: 50px;
+          background: $main;
+          color: $textWhite;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+
+
+
+      }
+
+
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 960px) {
+  .dropdownMenu{
+    left: -120px;
+  }
+}

@@ -1,0 +1,183 @@
+@import '../../values/colors.module.scss';
+
+
+.container {
+    height: auto;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 16%);
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    color: $textGray;
+    border-radius: 12px;
+    background: $white;
+
+    .addressContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-left: 10px;
+        flex: 3;
+
+        .address {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 2%;
+            row-gap: 6px;
+
+            .addressItem {
+                width: 48%;
+                font-family: 'Asap', sans-serif;
+                ;
+
+                .addressItemTitle {
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: $textGray;
+
+                }
+
+                .addressItemValue {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: $textBlack;
+                    margin-left: 4px;
+                }
+            }
+
+
+        }
+
+        .noteItem {
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 6px;
+
+            .noteTitle {
+                color: $textGray;
+                height: 100%;
+            }
+
+            .noteValue {
+                margin-left: 4px;
+                color: $textBlack;
+                line-height: 14px;
+            }
+
+        }
+
+
+    }
+
+    .addressActions {
+        margin-top: 12px;
+        display: flex;
+        gap: 6px;
+        font-family: 'Asap', sans-serif;
+
+        .addressButton {
+            font-size: 12px;
+            color: $white;
+            border: none;
+            background-color: $main;
+            height: 32px;
+            width: fit-content;
+            border-radius: 12px;
+            flex: 1;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $hover;
+            }
+
+            &[disabled] {
+                background-color: $green;
+                cursor: default;
+            }
+        }
+
+        .addressActionButton {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            color: $white;
+            border: none;
+            background-color: $main;
+            flex: 1;
+            height: 32px;
+            border-radius: 12px;
+
+            &:hover {
+                background-color: $hover;
+            }
+
+
+        }
+    }
+
+}
+
+
+@media screen and (min-width:650px) {
+    .container {
+        flex-direction: row;
+        padding: 12px;
+
+        .addressActions {
+            margin-top: 0px;
+            flex-direction: column;
+        }
+
+        .addressContainer {
+            .address {
+                .addressItem {
+                    .addressItemTitle {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: $textGray;
+
+                    }
+
+                    .addressItemValue {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $textBlack;
+                        margin-left: 4px;
+                    }
+                }
+            }
+
+            .noteItem {
+                font-size: 14px;
+                font-weight: 400;
+                margin-top: 6px;
+
+                .noteTitle {
+                    color: $textGray;
+                    height: 100%;
+                }
+
+                .noteValue {
+                    margin-left: 4px;
+                    color: $textBlack;
+                    line-height: 1px;
+                }
+
+            }
+        }
+
+        .addressActions {
+            margin-top: 0;
+            flex-direction: column;
+
+            .addressButton {
+                font-size: 14px;
+            }
+
+            .addressActionButton {
+                font-size: 14px;
+            }
+        }
+    }
+}

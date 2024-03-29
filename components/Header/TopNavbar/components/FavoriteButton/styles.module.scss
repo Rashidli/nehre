@@ -1,0 +1,175 @@
+@import '../../../../../values/colors.module.scss';
+
+.dropContainer {
+  width: 35px;
+  height: 35px;
+
+  .button {
+    border: none;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: $red;
+    color: $textWhite;
+    border: 1px solid $borderWhite;
+    font-size: 20px;
+    cursor: pointer;
+
+
+    &:hover {
+      border: 1px solid $red;
+      background-color: $textWhite;
+      color: $red;
+    }
+
+  }
+}
+
+
+.productModal {
+  border: none;
+  overflow: hidden;
+}
+
+.modal {
+  justify-content: center;
+  align-items: center;
+
+  .loginModal {
+    border-radius: 32px;
+    border: none;
+    width: 400px;
+
+    .loginContainer {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 20px;
+
+      .loginHeader {
+        font-weight: 560;
+        margin-bottom: 20px;
+
+      }
+
+      .phoneContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .loginInputs {
+          border: 1px solid $borderWhite;
+          border-radius: 12px;
+          padding: 10px 16px;
+          font-size: 16px;
+          height: 56px;
+          border: 1px solid $main;
+        }
+
+        .phoneLabel {
+          position: absolute;
+          padding: 5px 16px;
+          font-size: 12px;
+          font-weight: 400;
+
+          color: $textGray;
+        }
+
+        .phoneInput {
+          border: 1px solid $borderWhite;
+          border-radius: 12px;
+          padding: 10px 16px;
+          padding-top: 20px;
+          font-size: 16px;
+          border: 1px solid $main;
+        }
+
+
+      }
+
+      .emailContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .loginInputs {
+          border: 1px solid $borderWhite;
+          border-radius: 12px;
+          padding: 10px 16px;
+          font-size: 16px;
+          height: 56px;
+          border: 1px solid $main;
+        }
+      }
+
+      .actionContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+
+        .loginForgotContainer {
+          display: flex;
+          gap: 12px;
+
+          .forgotPassword {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 400;
+
+            border: none;
+            border-radius: 16px;
+            height: 50px;
+            background: $accountBg;
+            color: $textWhite;
+            font-size: 16px;
+            font-weight: bold;
+          }
+
+          .loginButton {
+            flex: 1;
+            border: none;
+            border-radius: 16px;
+            height: 50px;
+            background: $green;
+            color: $textWhite;
+            font-size: 16px;
+            font-weight: bold;
+
+
+          }
+        }
+
+        .emailOrPhone {
+          font-size: 14px;
+          font-weight: 400;
+
+          border: none;
+          border-radius: 16px;
+          height: 50px;
+          background: $main;
+          color: $textWhite;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+
+
+
+      }
+
+
+
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .dropContainer{
+    display: none;
+  }
+}

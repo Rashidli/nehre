@@ -1,0 +1,56 @@
+@import '../../../../../values/colors.module.scss';
+
+.dropContainer {
+    width: 35px;
+    height: 35px;
+            z-index: 100;
+                font-family: "Asap", sans-serif;
+                font-weight: 500;
+    .button {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background-color: $langBg;
+        color: $textWhite;
+        border: 1px solid $borderWhite;
+        font-size: 100%;
+        cursor: pointer;
+                font-weight: 500;
+
+        &:hover {
+            border: 1px solid $langBg;
+            background-color: $textWhite;
+            color: $langBg;
+        }
+    }
+        .drop {
+            display: flex;
+            flex-direction: column;
+            background-color: $langBg;
+            margin-top: -10px;
+            padding-top: 10px;
+            font-size: 100%;
+            border-radius: 5px;
+
+            .dropButton {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                width: 35px;
+                height: 35px;
+                background-color: transparent;
+                border-radius: 5px;
+                color: $textWhite;
+                text-align: center;
+                line-height: 100%;
+
+                &:hover {
+                    border: 1px solid $borderWhite;
+                    background-color: $textWhite;
+                    color: $langBg;
+                }
+            }
+        }
+    }
+

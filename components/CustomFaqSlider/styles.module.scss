@@ -1,0 +1,276 @@
+@import '../../values/colors.module.scss';
+
+
+
+.slider {
+  .swiperItem {
+    height: auto !important;
+
+    &_border {
+      border: 1px solid #ff7a2c;
+      border-radius: 20px;
+    }
+  }
+}
+.modalSlider {
+  padding: 0 !important;
+  .swiperItem {
+    position: relative;
+    height: 600px !important;
+    padding: 0 100px;
+    overflow: visible !important;
+
+    &_border {
+      border: 1px solid #ff7a2c;
+      border-radius: 20px;
+    }
+  }
+  
+}
+
+
+
+.modalInnerContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65% !important;
+  height: 600px;
+  padding: 0 !important;
+}
+
+.arrowContainer {
+  width: 100%;
+  height: 50px;
+  top: calc(50% - 25px);
+  z-index: 1;
+  right: 0px;
+  position: absolute;
+  gap: 12px;
+  overflow: visible;
+
+  .nextButton {
+    cursor: pointer;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 9px;
+    right: 0;
+    transition: $transition;
+
+    &:hover {
+
+      &::after {
+        filter: invert(1);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('/images/arrowRight.png');
+      width: 100%;
+      height: 100%;
+      rotate: 180deg;
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  .prevButton {
+    cursor: pointer;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 9px;
+    left: 0;
+    transition: $transition;
+
+    &:hover {
+      &::after {
+        filter: invert(1);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('/images/arrowRight.png');
+      width: 100%;
+      height: 100%;
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+
+.modalArrowContainer {
+  width: 100%;
+  height: 50px;
+  top: calc(50% - 25px);
+  z-index: 1;
+  right: 0px;
+  position: absolute;
+  gap: 12px;
+  overflow: visible;
+
+  .modalNextButton {
+    cursor: pointer;
+    position: absolute;
+    background: $white;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    top: 9px;
+    border: 1px solid $border;
+    right: 0px;
+    transition: $transition;
+
+    &:hover {
+      border-color: $hover;
+      background-color: $hover;
+
+      &::after {
+        filter: invert(1);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('/images/arrowRight.png');
+      width: 100%;
+      height: 100%;
+      rotate: 180deg;
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  .modalPrevButton {
+    cursor: pointer;
+    position: absolute;
+    background: $white;
+    border-radius: 50%;
+    border: 1px solid $border;
+    width: 48px;
+    height: 48px;
+    top: 9px;
+    left: 0;
+    transition: $transition;
+
+    &:hover {
+      border-color: $hover;
+      background-color: $hover;
+
+      &::after {
+        filter: invert(1);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('/images/arrowRight.png');
+      width: 100%;
+      height: 100%;
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalInnerContainer {
+    width: 400px;
+
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .modalSlider {
+    .swiperItem {
+      padding: 0 30px !important;
+    }
+    
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modalSlider {
+    padding: 0 0 100px 0 !important;
+    .swiperItem {
+      padding: 0 10px;
+    }
+    
+  }
+  .modalInnerContainer{
+    padding-bottom: 100px !important;
+  }
+  .arrowContainer{
+    display: none;
+  }   
+  .modalArrowContainer {
+    width: 30%;
+    height: 50px;
+    position: absolute;
+    top: 600px;
+    z-index: 2000;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 12px;
+  }
+  .modalPrevButton{
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .modalNextButton{
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .modalInnerContainer{
+    width: 95% !important;
+  }
+}
+
+
+
+// .swiper-button-next  { 
+//    color: red !important;
+//    width: 10px;
+// }
+
+// .swiper-button {
+//     background: #000;
+//     position: absolute;
+//     z-index: 10;
+//     cursor: pointer;
+// }
+
+// .swiper-button svg {
+//     width: 1.5rem;
+//     height: 1.5rem;
+// }
+
+// .image-swiper-button-prev {
+//     left: 5px;
+// }
+
+// .image-swiper-button-next {
+//     right: 5px;
+// }
+
+// .swiper-button-disabled {
+//     opacity: 0.5;
+// }

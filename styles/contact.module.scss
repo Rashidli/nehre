@@ -1,0 +1,121 @@
+@import '../values/colors.module.scss';
+
+
+.container {
+    padding: 25px 16px;
+
+    .contact {
+        font-size: 28px;
+        color: $textBlack;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .mainDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        column-gap: 16px;
+    }
+
+    .doubleContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: space-between;
+    }
+    .sectionDiv {
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        .sectionHeader {
+            font-size: 20px;
+            font-weight: 500;
+            color: $textBlack;
+            margin-bottom: 10px;
+        }
+
+        .phone {
+            display: block;
+            margin-bottom: 5px;
+            color: $textGray;
+            font-size: 16px;
+        }
+
+        .mail {
+            color: $textGray;
+            font-size: 16px;
+        }
+
+        .instagramIcon {
+            display: inline-block;
+            background-color: $green;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            border-radius: 50%;
+        }
+
+        .supplierSpan {
+            color: $textGray;
+            font-size: 16px;
+        }
+
+        .address {
+            color: $textGray;
+            font-size: 16px;
+        }
+
+        .mapContainer { 
+            margin-top: 24px;
+        }
+    }
+
+    .socials { 
+        display: flex;
+        gap: 8px;
+    }
+}
+
+@media screen and (min-width:910px) {
+    .container {
+        padding: 32px 0;
+
+        .contact {
+            font-size: 40px;
+            margin-bottom: 32px;
+        }
+
+        .sectionDiv {
+            margin-bottom: 32px;
+            .sectionHeader {
+                font-size: 24px;
+                font-weight: 700;
+                color: $textBlack;
+            }
+
+            .phone {
+                font-size: 18px;
+            }
+            .mail {
+                font-size: 18px;
+            }
+            .supplierSpan {
+                font-size: 18px;
+            }
+            .address {
+                font-size: 18px;
+            }
+        }
+
+        .mainDiv {
+            flex-direction: row;
+        }
+    }
+}

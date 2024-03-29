@@ -1,0 +1,16 @@
+@import '../../values/colors.module.scss';
+
+.carouselContainer { 
+
+    background-color: $containerBg;
+    border-radius: 0 0 30px 30px ;
+    padding: 15px 0;
+    @media screen and (max-width: 650px){
+        padding: 10px 8px;
+        
+    }
+    .slickStyles {
+            display: flex;
+            overflow: visible;}
+            
+}

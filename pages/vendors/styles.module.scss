@@ -1,0 +1,312 @@
+@import '../../values/colors.module.scss';
+
+.arrowContainer {
+  width: 100px;
+  height: 50px;
+  bottom: 0px;
+  z-index: 1;
+  right: 24px;
+  bottom: 12px;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  span {
+    color: $white;
+    font-size: 14px;
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
+    font-weight: 500;
+  }
+
+  .nextButton {
+    cursor: pointer;
+    position: absolute;
+    background: $white;
+    border-radius: 50%;
+    width: 32px;
+    top: 9px;
+    border: 1px solid $border;
+    height: 32px;
+    right: 0;
+    transition: $transition;
+
+    &:hover {
+      border-color: $hover;
+      background-color: $hover;
+
+      &::after {
+        filter: invert(1);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('/images/arrowRight.png');
+      width: 100%;
+      height: 100%;
+      rotate: 180deg;
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  .prevButton {
+    cursor: pointer;
+    position: absolute;
+    background: $white;
+    border-radius: 50%;
+    border: 1px solid $border;
+    width: 32px;
+    height: 32px;
+    top: 9px;
+    left: 0;
+    transition: $transition;
+
+    &:hover {
+      border-color: $hover;
+      background-color: $hover;
+
+      &::after {
+        filter: invert(1);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('/images/arrowRight.png');
+      width: 100%;
+      height: 100%;
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.container {
+    .vendorInfoContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 24px 16px;
+
+        .imageContainer { 
+            position: relative;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            overflow: hidden;
+            // margin: 0px 16px;
+            order: 2;
+            .vendorSlider { 
+                width:100% ;
+                height: 100%;
+                padding:  0 !important;
+            }
+        }
+        .vendorName {
+            font-size: 22px;
+            font-weight: 500;
+            color: $black;
+        }
+
+        .vendorInfo {
+            order: 1;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .description { 
+            font-size: 14px;
+            line-height: 20px;
+            color: $black;
+            font-weight: 400;
+    
+            span { 
+              font-weight: 600;
+              margin-right: 4px;
+            }
+          }
+        .vendorRating {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            .rating {
+                .starFilled {
+                    font-size: 18px;
+                    color: $starFilled;
+                }
+                .starOutline {
+                    font-size: 18px;
+                    color: $textGray;
+                }
+            }
+        }
+        .ratingCount {
+            color: $textGray;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .supplierText {
+            display: inline-block;
+            font-family: 'Asap', sans-serif;
+            font-size: 14px;
+            color: $black;
+            font-weight: 500;
+            .preSupplierText {
+                color: $textGray;
+                margin-right: 4px;
+                font-weight: 600;
+            }
+        }
+
+    }
+    .tabContainer { 
+        .tabList { 
+          border: none;
+          display: flex;
+          gap: 16px;
+          padding: 0 16px;
+          .tab { 
+            font-size: 14px;
+            font-weight: 400;
+            display: inline-block;
+            padding-bottom: 12px;
+            cursor: pointer;
+            &:focus {
+              outline: none;
+              background: none;
+            }
+          }
+          .tabActive { 
+            color: $main;
+            font-weight: 500;
+            border-bottom: 2px solid $main;
+          }
+        }
+        .description { 
+          padding: 16px 8px;
+          font-size: 16px;
+          line-height: 20px;
+          font-family: 'Asap', sans-serif;
+          font-weight: 500;
+          color: $textBlack;
+          min-height: 300px;
+        }
+        .tabPanel {
+          display: none;
+          background-color: $containerBg;
+          border-radius: 12px;
+          padding: 8px;
+          margin-bottom: 50px;
+          .certificateContainer {
+            border-radius: 20px;
+            flex: 1;
+            height: 300px;
+            cursor: pointer;
+            transition: $transition;
+            overflow: hidden;
+        
+            .certificateImage {
+              overflow: hidden;
+              border-radius: 20px;
+            }
+        
+            &:hover {
+              box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+        .tabPanelActive { 
+          display: block;
+          min-height: 400px;
+        }
+    }
+
+    .reviewsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+.modalContent {
+    position: relative;
+    border-radius: 20px;
+    width: 70%;
+    top: 5%;
+    height: 90%;
+    background: $white;
+    margin: auto;
+}
+
+
+@media screen and (min-width:1001px) {
+    .container {
+        .vendorInfoContainer {
+            flex-direction: row;
+            padding: 24px 0;
+
+            .imageContainer {
+                width: 520px;
+                height: 400px;
+                border-radius: 16px;
+                overflow: hidden;
+                margin: 0px;
+            }
+            .vendorInfo {
+                flex: 1;
+                order: 2;
+                margin-left: 24px;
+            }
+            .description {
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: 300;
+                span {
+                    font-weight: 600;
+                    margin-right: 8px;
+                }
+            }
+        }
+        .tabContainer {
+            .tabList {
+                padding: 0 48px;
+                .tab {
+                font-size: 16px;
+                font-weight: 400;
+                display: inline-block;
+                padding-bottom: 12px;
+                }
+                .tabActive {
+                color: $main;
+                font-weight: 500;
+                border-bottom: 2px solid $main;
+                }
+            }
+
+            .tabPanel {
+                display: none;
+                background-color: $containerBg;
+                border-radius: 12px;
+                padding: 30px;
+                margin-bottom: 0px;
+            }
+
+            .tabPanelActive {
+                display: block;
+            }
+        }
+    }
+}

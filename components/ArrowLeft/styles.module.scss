@@ -1,0 +1,20 @@
+@import '../../values/colors.module.scss';
+
+.arrowContainerStyle {
+    display: flex;
+    padding: 0px 5px 0px 10px;
+    align-self: stretch;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    // position: absolute;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // left: 0;
+    // z-index: 1;
+
+    .arrowStyle {
+        color: $main;
+        font-size: 16px;
+    }
+}
